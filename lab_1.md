@@ -207,24 +207,4 @@ YES
 14
 
 
-#include <iostream>
-#include <iomanip>
-using namespace std;
-
-int main() {
-    const double PI = 3.14159265358979;
-    
-    double r;
-    cin >> r;
-    
-    double length = 2 * PI * r;           // длина окружности
-    double area = PI * r * r;             // площадь круга
-    double volume = 4.0 / 3.0 * PI * r * r * r;  // объём шара
-    
-    cout << fixed << setprecision(2);
-    cout << length << " " << area << " " << volume;
-    
-    return 0;
-}
-
 
