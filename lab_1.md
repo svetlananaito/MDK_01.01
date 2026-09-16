@@ -205,3 +205,30 @@ YES
 
 Вывод
 14
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int Task1()
+
+{   // Здание 1 Средний чек
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << fixed << setprecision(1) << (a + b + c) / 3.0;
+    return 0;
+}
+
+int Task2() 
+{
+
+    // Задание 2 Из Цельсия в Фаренгейт
+
+    int C;
+    cin >> C;
+    cout << fixed << setprecision(1) << ( C * 9 / 5 + 32);
+    return 0;
+
+}
+
+
