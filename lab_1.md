@@ -207,21 +207,83 @@ YES
 14
 
 ЗАМЕТКИ
-
-1.5. Найдите ошибку: сумма от 1 до n 🟡
-Программа должна складывать все числа от 1 до n. Для маленьких n она работает, а для n порядка 100000 выдаёт бессмыслицу (иногда отрицательную). Найдите причину и исправьте.
-
 #include <iostream>
+#include <iomanip>
+using namespace std;
+
+int Task1(){   // Здание 1 Средний чек (Легкий)
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << fixed << setprecision(1) << (a + b + c) / 3.0;
+    return 0;
+}
+
+int Task2(){
+
+    // Задание 2 Из Цельсия в Фаренгейт (Легкий)
+
+    double C;
+    cin >> C;
+    cout << fixed << setprecision(1) << ( C * 9.0 / 5.0 + 32);
+    return 0;
+
+}
+
+int Task3(){
+    //Задание 3 Площадь и объём (Средний)
+
+    const double PI = 3.14159265358979;
+
+    double r;
+    cin >> r;
+
+    double length = 2 * PI * r;        
+    double area = PI * r * r;            
+    double volume = 4.0 / 3.0 * PI * r * r * r;  
+
+    cout << fixed << setprecision(2);
+    cout << length << " " << area << " " << volume;
+
+    return 0;
+}
+
+int Task4() { 
+    //Задание 4 Найдите ошибку: сумма от 1 до n (Средний)
+        int n;
+        cin >> n;
+        long long sum = 0;               //Было int, стало long
+        for (int i = 1; i <= n; ++i) {
+            sum += i;  
+        }
+        cout << sum << "\n";
+        return 0;
+    }
+
+
+
+int Task5(){
+
+    //Задание 5 Сумма квадратов (сложно)
+    int n;
+    cin >> n;
+
+    long long sum = 0;
+    for (int i = 1; i <= n; i++) {
+        sum += 1LL * i * i;
+    }
+    cout << sum;
+    return 0;
+}
+
+
 
 int main() {
-  int n;
-  std::cin >> n;
-  int sum = 0;
-  for (int i = 1; i <= n; ++i) {
-    sum += i;
-  }
-  std::cout << sum << "\n";
+    Task1();
+    Task2();
+    Task3();
+    Task4();
+    Task5();
+    return 0;
 }
-Формат ввода. Одно целое число n (1 ≤ n ≤ 1 000 000).
 
-Формат вывода. Сумма всех чисел от 1 до n.
+
