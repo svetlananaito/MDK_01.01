@@ -207,83 +207,78 @@ YES
 14
 
 ЗАМЕТКИ
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-int Task1(){   // Здание 1 Средний чек (Легкий)
+// Задание 1: Средний чек (лёгкий)
+void Task1() {
     int a, b, c;
+    cout << "Введите три числа через пробел: ";
     cin >> a >> b >> c;
-    cout << fixed << setprecision(1) << (a + b + c) / 3.0;
-    return 0;
+    cout << "Среднее: "
+         << fixed << setprecision(1) << (a + b + c) / 3.0 << "\n";
 }
 
-int Task2(){
-
-    // Задание 2 Из Цельсия в Фаренгейт (Легкий)
-
+// Задание 2: Цельсий → Фаренгейт (лёгкий)
+void Task2() {
     double C;
+    cout << "Введите температуру в градусах Цельсия: ";
     cin >> C;
-    cout << fixed << setprecision(1) << ( C * 9.0 / 5.0 + 32);
-    return 0;
-
+    cout << "Температура в Фаренгейтах: "
+         << fixed << setprecision(1) << (C * 9.0 / 5.0 + 32) << "\n";
 }
 
-int Task3(){
-    //Задание 3 Площадь и объём (Средний)
-
+// Задание 3: Площадь и объём (средний)
+void Task3() {
     const double PI = 3.14159265358979;
-
     double r;
+    cout << "Введите радиус: ";
     cin >> r;
 
-    double length = 2 * PI * r;        
-    double area = PI * r * r;            
-    double volume = 4.0 / 3.0 * PI * r * r * r;  
+    double length = 2 * PI * r;                  // длина окружности
+    double area   = PI * r * r;                  // площадь круга
+    double volume = 4.0 / 3.0 * PI * r * r * r;  // объём шара
 
     cout << fixed << setprecision(2);
-    cout << length << " " << area << " " << volume;
-
-    return 0;
+    cout << "Длина окружности: " << length << "\n";
+    cout << "Площадь круга:    " << area   << "\n";
+    cout << "Объём шара:       " << volume << "\n";
 }
 
-int Task4() { 
-    //Задание 4 Найдите ошибку: сумма от 1 до n (Средний)
-        int n;
-        cin >> n;
-        long long sum = 0;               //Было int, стало long
-        for (int i = 1; i <= n; ++i) {
-            sum += i;  
-        }
-        cout << sum << "\n";
-        return 0;
-    }
-
-
-
-int Task5(){
-
-    //Задание 5 Сумма квадратов (сложно)
+// Задание 4: Сумма от 1 до n (средний)
+void Task4() {
     int n;
+    cout << "Введите число n: ";
+    cin >> n;
+
+    long long sum = 0;
+    for (int i = 1; i <= n; ++i) {
+        sum += i;
+    }
+    cout << "Сумма чисел от 1 до " << n << " = " << sum << "\n";
+}
+
+// Задание 5: Сумма квадратов (сложный)
+void Task5() {
+    int n;
+    cout << "Введите число n: ";
     cin >> n;
 
     long long sum = 0;
     for (int i = 1; i <= n; i++) {
         sum += 1LL * i * i;
     }
-    cout << sum;
-    return 0;
+    cout << "Сумма квадратов от 1 до " << n << " = " << sum << "\n";
 }
-
-
 
 int main() {
     Task1();
-    Task2();
-    Task3();
-    Task4();
-    Task5();
+    // Task2();
+    // Task3();
+    // Task4();
+    // Task5();
     return 0;
-}
-
+} объясни мне этот код по заданиям
 
