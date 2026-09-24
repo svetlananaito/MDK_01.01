@@ -210,79 +210,72 @@ YES
 ```
 #include <iostream>
 #include <iomanip>
-#include <clocale>
 using namespace std;
 
-// Задание 1: Средний чек (лёгкое) 
-void Task1() {
-    int a, b, c;
-    cout << "Введите три числа через пробел: ";
-    cin >> a >> b >> c;
-    cout << "Среднее: " << fixed << setprecision(1) << (a + b + c) / 3.0 << "\n";
+int Task1() //Задание 1. Пока не ноль 🟢
+{
+    int a = 0;
+    int b = 0;
+    int x;
+    while (true) {
+        cin >> x;
+        if (x == 0) break;
+        a++;
+        b += x;
+    }
+    cout << a << " " << b << endl;
+    return 0;
 }
 
-// Задание 2: Цельсий -> Фаренгейт (лёгкое)
-void Task2() {
-    double C;
-    cout << "Введите температуру в градусах Цельсия: ";
-    cin >> C;
+int Task2() //Задание 2. Среднее с двумя знаками 🟡
+{
+    int n;
+    cin >> n;
+    
+    double sum = 0.0;
+    for (int i = 0; i < n; i++) {
+        double x;
+        cin >> x;
+        sum += x;
+    }
 
-    cout << "Температура в Фаренгейтах: "
-        << fixed << setprecision(1) << (C * 9.0 / 5.0 + 32) << "\n";
-}
-
-// Задание 3: Площадь и объём (среднее)
-void Task3() {
-    const double PI = 3.14159265358979;
-    double r;
-    cout << "Введите радиус: ";
-    cin >> r;
-
-    double length = 2 * PI * r;
-    double area = PI * r * r;
-    double volume = 4.0 / 3.0 * PI * r * r * r;
-
+    double avg = sum / n;
     cout << fixed << setprecision(2);
-    cout << "Длина окружности: " << length << "\n";
-    cout << "Площадь круга:    " << area << "\n";
-    cout << "Объём шара:       " << volume << "\n";
+    cout << sum << " " << avg << endl;
+    return 0;
+
 }
 
-// Задание 4: Сумма от 1 до n (среднее) 
-void Task4() {
+int Task3()  // Задание 3. Гистограмма из звёздочек 🟡
+{
     int n;
-    cout << "Введите число n: ";
     cin >> n;
+    for (int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
 
-    long long sum = 0;
-    for (int i = 1; i <= n; ++i) {
-        sum += i;
+        cout << setw(3) << x << " | ";
+        for (int j = 0; j < x; j++) {
+            cout << "*";
+        }
+        cout << endl;
+
     }
-
-    cout << "Сумма чисел от 1 до " << n << " = " << sum << "\n";
+    return 0;
 }
 
-// Задание 5: Сумма квадратов (сложное) 
-void Task5() {
-    int n;
-    cout << "Введите число n: ";
-    cin >> n;
-
-    long long sum = 0;
-    for (int i = 1; i <= n; i++) {
-        sum += 1LL * i * i;
-    }
-
-    cout << "Сумма квадратов от 1 до " << n << " = " << sum << "\n";
-}
-
-int main() {
-    setlocale(LC_ALL, "Russian");
-    Task1();
-    Task2();
-    Task3(); 
-    Task4(); 
-    Task5();
+int Task4() {
 
     return 0;
 }
+
+
+int main() { 
+    //Task1();
+   // Task2();
+    Task3();
+    Task4();
+    return 0;
+
+}
+```
