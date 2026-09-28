@@ -247,3 +247,28 @@ while (std::cin >> x) {
     if (x > best) { second = best; best = x; }
     else if (x < best && x > second) second = x;
 }
+
+
+
+’’’
+#include <iostream>
+#include <limits>
+
+int main() {
+    int best = std::numeric_limits<int>::min();
+    int second = std::numeric_limits<int>::min();
+    int x;
+
+    while (std::cin >> x) {
+        if (x > best) {
+            second = best;
+            best = x;
+        } else if (x < best && x > second) {
+            second = x;
+        }
+    }
+
+    std::cout << second << std::endl;
+    return 0;
+}
+‘‘‘
